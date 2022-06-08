@@ -101,7 +101,7 @@ li {
 /*for wrapper*/
 .wrapper {
   max-width: 1360px;
-  width: 90.88%;
+  width: 90%;
   margin: 0 auto;
 }
 /*=================================
@@ -120,10 +120,10 @@ li {
   --footer-link: #4590B0;
   --social-icon: #8C8C8C;
   --input-color: #EBEBEB;
+  --header-border: #a9a9a975;
 }
 
 main { font-family: 'Roboto', sans-serif; }
-
 .display-none { display: none; }
 .hamburger { display: none; }
 /*=================================
@@ -131,11 +131,17 @@ main { font-family: 'Roboto', sans-serif; }
 =================================*/
 
 /*=================================
-  Header styling starts here
+Header styling starts here
 =================================*/
+.menu-list { padding-right: 21px; }
+.menu-list:first-child { padding-right: 10px; }
+.menu-list:last-child { padding: 0; }
+h1 { flex-basis: 42%; }
+.header-logo { font-size: 0; }
+
 header .wrapper {
   width: 100%;
-  border-bottom: 1px solid var(--right-slider);
+  border-bottom: 1px solid var(--header-border);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -143,27 +149,23 @@ header .wrapper {
 }
 
 .header-box {
-  width: 90.88%;
+  width: 90%;
   margin: 0 auto;
-  padding: 30px 0 33px;
+  padding: 32px 0 33px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .left-header {
-  margin-left: 4px;
   display: flex;
   align-items: center;
 }
 
-h1 { flex-basis: 40%; }
-.header-logo { font-size: 0; }
-
 .header-logo::after {
   content: '';
-  margin: 0 15%;
-  padding: 15px 0.5px;
+  margin: 0 13%;
+  padding: 16px 0.6px;
   background-color: var(--right-slider);
 }
 
@@ -176,14 +178,10 @@ h1 { flex-basis: 40%; }
 
 .menu-item {
   color: var(--white-color);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 1px;
 }
-
-.menu-list { padding-right: 22px; }
-.menu-list:first-child { padding-right: 8px; }
-.menu-list:last-child { padding: 0; }
 
 .menu-list:last-child a {
   padding: 0;
@@ -209,9 +207,12 @@ h1 { flex-basis: 40%; }
 .banner .wrapper { width: 100%; }
 .slider-images { display: flex; }
 .banner-box { position: relative; }
+.slides { flex-basis: 17%;}
+.slide-active { background-color: var(--white-color); }
+.bold-heading { font-weight: 900; }
 
 .slider-content {
-  padding: 0 0 393px 4.5%;
+  padding: 0 0 412px 4.5%;
   flex-basis: 34%;
   background-color: var(--left-slider);
 }
@@ -222,31 +223,32 @@ h1 { flex-basis: 40%; }
   background-color: var(--right-slider);
 }
 
-.slider-images img { height: 100%; }
+.slider-images img {
+  object-fit: cover;
+  height: 100%;
+}
 
 .headings {
   color: var(--white-color);
-  font-size: 50px;
+  font-size: 52px;
   text-transform: uppercase;
 }
 
 .normal-heading {
-  margin-top: 354px;
+  margin-top: 370px;
   font-weight: 100;
   line-height: 1;
   letter-spacing: 3px;
 }
 
-.bold-heading { font-weight: 900; }
-
-.letter-space {
+.slider-content .letter-space {
   padding-top: 14px;
   display: block;
   position: absolute;
   color: var(--white-color);
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 300;
-  letter-spacing: 45px;
+  letter-spacing: 47px;
   text-transform: uppercase;
 }
 
@@ -256,10 +258,8 @@ h1 { flex-basis: 40%; }
   justify-content: space-between;
   position: absolute;
   left: 5%;
-  bottom: 100px;
+  bottom: 104px;
 }
-
-.slides { flex-basis: 17%;}
 
 .line {
   border-bottom: 1px solid var(--right-slider);
@@ -267,17 +267,20 @@ h1 { flex-basis: 40%; }
   font-size: 7px;
   text-indent: -9999px;
 }
-
-.slide-active { background-color: var(--white-color); }
 /* banner section end here */
 
 /* why us section started here */
+.why-us .bold-heading { color: var(--black-color); }
+.left-content { flex-basis: 39%; }
+
 .why-us .letter-space {
   padding: 0 0 52px;
+  display: block;
   position: inherit;
-  color: var(--social-icon);
-  font-size: 16px;
-  letter-spacing: 33px;
+  color: var(--lightgray-color);
+  font-size: 18px;
+  letter-spacing: 34px;
+  text-transform: uppercase;
 }
 
 .why-us .normal-heading {
@@ -286,18 +289,15 @@ h1 { flex-basis: 40%; }
   color: var(--black-color);
 }
 
-.why-us .bold-heading { color: var(--black-color); }
-
 .outter-box {
-  padding: 80px 0 64px;
+  padding: 82px 0 64px;
   display: flex;
   justify-content: space-between;
 }
 
-.left-content { flex-basis: 40%; }
-
 .right-content {
-  flex-basis: 48.4%;
+  margin-top: 4px;
+  flex-basis: 49%;
   position: relative;
 }
 
@@ -305,33 +305,33 @@ h1 { flex-basis: 40%; }
   margin-top: 34px;
   color: var(--lightgray-color);
   font-size: 18px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .above-image {
-  width: 53%;
+  width: 52.5%;
   position: absolute;
   left: 0;
   bottom: 0;
-  transform: translate(-100px, 88px);
+  transform: translate(-100px, 90px);
 }
 /* why us section end here */
 
 /* ask question section start here */
-.ask-question {
-  margin-top: 258px;
-  text-align: center;
-}
+.ask-question { margin-top: 272px; }
+.ask-question .headings { text-align: center; }
+.ask-question .bold-heading { color: var(--black-color); }
+.form-content::placeholder { color: var(--lightgray-color); }
+.form-group { padding-bottom: 54px; }
+.form-group:nth-child(3) { padding-bottom: 46px; }
 
 .ask-question .normal-heading {
   margin: 0;
   color: var(--black-color);
 }
 
-.ask-question .bold-heading { color: var(--black-color); }
-
 form {
-  width: 65.5%;
+  width: 66%;
   margin: 50px auto 10px;
 }
 
@@ -341,17 +341,11 @@ form {
   border: none;
   border-bottom: 2px solid var(--input-color);
   outline: none;
-  font-size: 16px;
-}
-
-.form-content::placeholder { color: var(--lightgray-color); }
-
-.form-group {
-  padding-bottom: 50px;
+  font-size: 18px;
 }
 
 .send-button {
-  padding: 21px 8%;
+  padding: 23px 8.5%;
   border: none;
   outline: none;
   background-color: var(--send-button);
@@ -360,6 +354,9 @@ form {
   font-weight: 600;
   letter-spacing: 5px;
   text-transform: uppercase;
+  margin-left: 50%;
+  display: block;
+  transform: translateX(-54%);
 }
 /* ask question section end here */
 
@@ -376,7 +373,7 @@ footer {
 }
 
 .top-footer {
-  padding: 14px 0;
+  padding: 18px 0 12px;
   border-bottom: 1px solid var(--right-slider);
   display: flex;
   align-items: center;
@@ -389,7 +386,7 @@ h6 {
 }
 
 .bottom-footer {
-  padding: 16px 0 20px;
+  padding: 17px 0 12px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -399,24 +396,24 @@ h6 .header-logo { flex-basis: 40%; }
 
 h6 .header-logo::after {
   content: '';
-  margin: 9px 1.6%;
+  margin: 9px 2%;
   padding: 15px 0.5px;
   position: absolute;
   background-color: var(--right-slider);
 }
 
-h6 .architect { margin-top: 10px; }
+h6 .architect { margin: 10px 0 0 14.5%; }
 
 .nav-footer {
   display: flex;
   align-items: center;
 }
 
-.footer-menu { padding-left: 26px; }
+.footer-menu { padding-left: 24px; }
 
 .footer-menu a {
   color: var(--social-icon);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
 }
 
@@ -424,7 +421,7 @@ h6 .architect { margin-top: 10px; }
 
 .bottom-footer p {
   color: var(--social-icon);
-  font-size: 14px;
+  font-size: 15px;
 }
 
 p a {
@@ -432,7 +429,7 @@ p a {
   font-size: 16px;
 }
 
-.social-links { flex-basis: 8%; }
+.social-links { flex-basis: 7.3%; }
 .social-icon { padding-left: 14%; }
 
 .icon {
@@ -509,6 +506,21 @@ p a {
     float: left;
     text-indent: 0;
   }
+
+  .hamburger:hover + .nav-menu > .menu-list {
+    display: block;
+  }
+
+  .nav-menu {
+    position: absolute;
+    left: 0;
+    text-align: center;
+    background-color: #000;
+    width: 100%;
+    line-height: 2;
+    padding: 23px 0;
+    margin-top: 40px;
+  }
   /* header section ends here */
 
   /* banner section starts here */
@@ -545,6 +557,32 @@ p a {
 @media only screen and (max-width: 540px) {
   form { width: 100%; }
   .form-group { padding-bottom: 10px; }
-  .social-links { flex-basis: 18%; }
+  .social-links { margin-top: 10px; }
   .left-header { margin-left: 24%; }
+  .bottom-footer { flex-direction: column; }
+  .social-icon { padding: 0; }
+  .top-footer { flex-direction: column; }
+  .footer-menu { padding: 0 10px; }
+  h6 .architect { margin: 10px; }
+  .slider-lines { bottom: 50px; }
+  .slider-content h2 { top: 30px; }
+  .slider-content h3 { top: 70px; }
+
+  h6 {
+    width: 50%;
+    flex-direction: column;
+  }
+
+  .slider-content .letter-space {
+    top: 126px;
+    padding: 0;
+    letter-spacing: 32px;
+    font-size: 18px;
+  }
+
+  .slider-content .headings {
+    position: absolute;
+    margin: 0;
+    font-size: 40px;
+  }
 }
